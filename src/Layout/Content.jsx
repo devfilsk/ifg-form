@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CreateForm from "../views/formularios/createForm";
+import CreateQuestions from "../views/perguntas/CreateQuestions";
 
 class Content extends Component {
     render() {
@@ -19,7 +20,7 @@ class Content extends Component {
                     </section>
 
                     <section className="content">
-                        <CreateForm/>
+                        <CreateQuestions/>
                     </section>
                 </div>
             </div>
