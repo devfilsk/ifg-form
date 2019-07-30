@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     ListGroupItem,
     ListGroup,
@@ -9,10 +9,13 @@ import {
     FormGroup,
     Label, Input, CustomInput, Button, InputGroup, InputGroupAddon
 } from "reactstrap";
+import Alternative from "../../components/alternative";
 
 const CreateQuestions = (props) => {
 
+    const [ displayData, setDisplayData ] = useState([]);
     const [ tipo, setTipo ] = useState('');
+    const [ alternative, setAlternative ] = useState('');
 
     const setTipoContent = (e) => {
         let mult = document.getElementById('mult-question');
@@ -45,6 +48,13 @@ const CreateQuestions = (props) => {
         }
     };
 
+    const addAlternative = () => {
+        let data = displayData;
+        data.push(alternative);
+        setDisplayData(data);
+        console.log(displayData)
+    };
+
     return (
         <div>
             <ListGroup>
@@ -70,21 +80,25 @@ const CreateQuestions = (props) => {
                                     </Input>
                                 </FormGroup>
                             </Col>
+                            <div className='alternatives'>
+                                <Alternative data={displayData}/>
+                            </div>
                             <div className='hidden' id='text-question'>
                                 <Col md={12}>
                                     <FormGroup>
                                         <Label for="exampleEmail">Pergunta</Label>
-                                        <Input type="textarea" name="email" id="exampleEmail"
-                                               placeholder="Texto da pergunta"/>
+                                        <Input type="textarea" name="email" id="exampleEmail" placeholder="Texto da pergunta"/>
                                     </FormGroup>
                                 </Col>
                             </div>
                             <div className='hidden' id='mult-question'>
                                 <Col md={10}>
-                                        <Input/>
-                                        <InputGroupAddon addonType="append">
-                                            <Button color="secondary">To the Right!</Button>
-                                        </InputGroupAddon>
+                                    <div className="input-group input-group-sm">
+                                        <input type="text" className="form-control" id='alternative-input' value={alternative} onChange={e => setAlternative(e.target.value)}/>
+                                        <span className="input-group-btn">
+                                          <button type="button" className="btn btn-info btn-flat" onClick={addAlternative}>+</button>
+                                        </span>
+                                    </div>
                                 </Col>
                             </div>
                             <Col md={12}>
