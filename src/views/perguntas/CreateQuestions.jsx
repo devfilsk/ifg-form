@@ -50,9 +50,8 @@ const CreateQuestions = (props) => {
 
     const addAlternative = () => {
         let data = displayData;
-        data.push(alternative);
-        setDisplayData(data);
-        console.log(displayData)
+        setDisplayData(data => data.concat(alternative));
+        setAlternative('');
     };
 
     return (
