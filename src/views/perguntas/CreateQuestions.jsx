@@ -10,15 +10,17 @@ import {
     Label, Input, CustomInput, Button, Card, CardTitle, CardText
 } from "reactstrap";
 import Alternative from "../../components/alternative";
+import Question from "../../components/question";
 
 const CreateQuestions = (props) => {
 
     const [ options, setOptions ]           = useState([]);
     const [ tipo, setTipo ]                 = useState('');
     const [ option, setOption ]             = useState('');
-    const [ ask, setAsk ]                   = useState('');
+    const [ ask, setAsk ]                   = useState([]);
     const [count, setCount]                 = useState(1);
-    const [countQuestion, setCountQuestion] = useState(1);
+    const [inputAsk, setInputAsk]                 = useState('');
+    const [countAsks, setCountQuestion] = useState(1);
 
     const letters = {
         1  : 'A)',
@@ -78,28 +80,14 @@ const CreateQuestions = (props) => {
     const saveQuestion = () => {
         console.log("Pergunta: ", ask);
         console.log("questões: ", options);
+        let data = inputAsk;
+        setAsk(data => data.concat(inputAsk));
     }
 
     return (
         <div>
-            {ask !== '' || option !== '' ? (
-                <Row>
-                    <Col md={12}>
-                        <Card body>
-                        <CardTitle>
-                            <ListGroup>
-                                <ListGroupItem active tag="a" href="#" action>{ask != "" ? (`${countQuestion} - ${ask}`) : ''}</ListGroupItem>
-                                <Alternative options={options} count={count}/>
-                            </ListGroup>
-                        </CardTitle>
-                        {/*<CardText>*/}
-                        {/*<Alternative options={options} count={count}/>*/}
-                        {/*</CardText>*/}
-                        {/*<Button>Go somewhere</Button>*/}
-                        </Card>
-
-                    </Col>
-                </Row>
+            {ask.length > 0 || option !== '' ? (
+                <Question questions={ask} options={options} count={count} countAsks={countAsks}/>
             ): ''}
 
             <ListGroup>
@@ -126,13 +114,13 @@ const CreateQuestions = (props) => {
                                 </FormGroup>
                             </Col>
                             <div className='alternatives'>
-
+                                <Alternative options={options} count={count}/>
                             </div>
                             <div className='hidden' id='text-question'>
                                 <Col md={12}>
                                     <FormGroup>
                                         <Label for="exampleEmail">Pergunta</Label>
-                                        <Input type="textarea" name="email" id="exampleEmail" value={ask} placeholder="Texto da pergunta" onChange={e => setAsk(e.target.value)}/>
+                                        <Input type="textarea" name="email" id="exampleEmail" value={inputAsk} placeholder="Texto da pergunta" onChange={e => setInputAsk(e.target.value)}/>
                                     </FormGroup>
                                 </Col>
                             </div>
@@ -140,7 +128,7 @@ const CreateQuestions = (props) => {
                                 <Col md={10}>
                                     <FormGroup>
                                         <Label for="exampleEmail">Pergunta</Label>
-                                        <Input type="textarea" name="email" id="exampleEmail" value={ask} placeholder="Texto da pergunta" onChange={e => setAsk(e.target.value)}/>
+                                        <Input type="textarea" name="email" id="exampleEmail" value={inputAsk} placeholder="Texto da pergunta" onChange={e => setInputAsk(e.target.value)}/>
                                     </FormGroup>
                                 </Col>
                                 <Col md={10} tag={'div'}>
