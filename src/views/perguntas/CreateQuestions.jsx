@@ -7,15 +7,31 @@ import {
     Row,
     Col,
     FormGroup,
-    Label, Input, CustomInput, Button, InputGroup, InputGroupAddon
+    Label, Input, CustomInput, Button, Card, CardTitle, CardText
 } from "reactstrap";
 import Alternative from "../../components/alternative";
 
 const CreateQuestions = (props) => {
 
-    const [ displayData, setDisplayData ] = useState([]);
-    const [ tipo, setTipo ] = useState('');
-    const [ alternative, setAlternative ] = useState('');
+    const [ options, setOptions ]           = useState([]);
+    const [ tipo, setTipo ]                 = useState('');
+    const [ option, setOption ]             = useState('');
+    const [ ask, setAsk ]                   = useState('');
+    const [count, setCount]                 = useState(1);
+    const [countQuestion, setCountQuestion] = useState(1);
+
+    const letters = {
+        1  : 'A)',
+        2  : 'B)',
+        3  : 'C)',
+        4  : 'D)',
+        5  : 'E)',
+        6  : 'F)',
+        7  : 'G)',
+        8  : 'H)',
+        9  : 'I)',
+        10 : 'J)',
+    };
 
     const setTipoContent = (e) => {
         let mult = document.getElementById('mult-question');
@@ -49,29 +65,59 @@ const CreateQuestions = (props) => {
     };
 
     const addAlternative = () => {
-        let data = displayData;
-        setDisplayData(data => data.concat(alternative));
-        setAlternative('');
+        let data = options;
+        if(option.length > 0){
+            setOptions(data => data.concat(letters[count]+' '+option));
+            setOption('');
+            setCount(count+1)
+        }else{
+            alert('Ops, preencha com mais letras')
+        }
     };
+
+    const saveQuestion = () => {
+        console.log("Pergunta: ", ask);
+        console.log("questões: ", options);
+    }
 
     return (
         <div>
+            {ask !== '' || option !== '' ? (
+                <Row>
+                    <Col md={12}>
+                        <Card body>
+                        <CardTitle>
+                            <ListGroup>
+                                <ListGroupItem active tag="a" href="#" action>{ask != "" ? (`${countQuestion} - ${ask}`) : ''}</ListGroupItem>
+                                <Alternative options={options} count={count}/>
+                            </ListGroup>
+                        </CardTitle>
+                        {/*<CardText>*/}
+                        {/*<Alternative options={options} count={count}/>*/}
+                        {/*</CardText>*/}
+                        {/*<Button>Go somewhere</Button>*/}
+                        </Card>
+
+                    </Col>
+                </Row>
+            ): ''}
+
             <ListGroup>
                 <ListGroupItem tag="button" action active>
                     <ListGroupItemHeading></ListGroupItemHeading>
-                    <ListGroupItemText>
+                    <ListGroupItemText tag='div'>
                         Criar uma nova pergunta
                     </ListGroupItemText>
                 </ListGroupItem>
                 <ListGroupItem tag="button" action>
                     {/*<ListGroupItemHeading>Preencha com os dados da pergunta</ListGroupItemHeading>*/}
-                    <ListGroupItemText>
-                        <Row form>
-                            <Col md={3} addonType="append">
+                    <ListGroupItemText tag={'div'}>
+                        <Row form tag='div'>
+                            <Col md={3}>
                                 <FormGroup>
-                                    <Label for="examplePassword">Tipo</Label>
-                                    <Input type="select" name="select" id="tipo" onChange={e => setTipoContent(e)}>
-                                        <option disabled selected>Selecione um tipo</option>
+                                    <Label for="examplePassword">Tipo de pergunta</Label>
+                                    <Input type="select" name="select" id="tipo" onChange={e => setTipoContent(e)} defaultValue={0}>
+                                        <option value={0} disabled={true}>Selecione um tipo</option>
                                         <option value={1}>Multipla Escolha</option>
                                         <option value={2}>Resposta Unica</option>
                                         <option value={3}>Texto Curto</option>
@@ -80,24 +126,30 @@ const CreateQuestions = (props) => {
                                 </FormGroup>
                             </Col>
                             <div className='alternatives'>
-                                <Alternative data={displayData}/>
+
                             </div>
                             <div className='hidden' id='text-question'>
                                 <Col md={12}>
                                     <FormGroup>
                                         <Label for="exampleEmail">Pergunta</Label>
-                                        <Input type="textarea" name="email" id="exampleEmail" placeholder="Texto da pergunta"/>
+                                        <Input type="textarea" name="email" id="exampleEmail" value={ask} placeholder="Texto da pergunta" onChange={e => setAsk(e.target.value)}/>
                                     </FormGroup>
                                 </Col>
                             </div>
-                            <div className='hidden' id='mult-question'>
+                            <div tag={'div'} className='hidden' id='mult-question'>
                                 <Col md={10}>
-                                    <div className="input-group input-group-sm">
-                                        <input type="text" className="form-control" id='alternative-input' value={alternative} onChange={e => setAlternative(e.target.value)}/>
-                                        <span className="input-group-btn">
+                                    <FormGroup>
+                                        <Label for="exampleEmail">Pergunta</Label>
+                                        <Input type="textarea" name="email" id="exampleEmail" value={ask} placeholder="Texto da pergunta" onChange={e => setAsk(e.target.value)}/>
+                                    </FormGroup>
+                                </Col>
+                                <Col md={10} tag={'div'}>
+                                    <FormGroup style={{'display': 'flex', 'flexDirection': 'row'}}>
+                                        <Input type="text" className="form-control" id='alternative-input' value={option} onChange={e => setOption(e.target.value)} placeholder='Adicionar Alternativa'/>
+                                        <div className="input-group-btn">
                                           <button type="button" className="btn btn-info btn-flat" onClick={addAlternative}>+</button>
-                                        </span>
-                                    </div>
+                                        </div>
+                                    </FormGroup>
                                 </Col>
                             </div>
                             <Col md={12}>
@@ -106,10 +158,8 @@ const CreateQuestions = (props) => {
                                                  label="Resposta Obrigatória"/>
                                 </FormGroup>
                             </Col>
-                            <Col md={12}>
-                                <FormGroup>
-                                    <Button color="primary" size="lg" block>Adicionar Pergunta</Button>
-                                </FormGroup>
+                            <Col md={12} tag='div'>
+                                <Button color="primary" size="lg" block onClick={saveQuestion}>Adicionar Pergunta</Button>
                             </Col>
                         </Row>
                     </ListGroupItemText>
