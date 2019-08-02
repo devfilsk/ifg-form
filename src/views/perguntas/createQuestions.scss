@@ -1,0 +1,15 @@
+.input-questions, .input-questions:focus{
+  outline: 0!important;
+  border-color: transparent !important;
+  box-shadow: none!important;
+  border-bottom: 1.5px solid #cccccc !important;
+  border-radius: 0 !important;
+}
+.input-questions:after{
+  width: 100%;
+  height: 2px;
+  background-color: #353535;
+}
+.input-questions:hover{
+
+}
