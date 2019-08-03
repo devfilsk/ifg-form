@@ -69,15 +69,12 @@ const CreateQuestions = (props) => {
         }
     };
 
-    const addAlternative = () => {
+    const addAlternative = (index) => {
+
+        // let data = options;
+        // setOptions(data => data.concat(''));
         let data = options;
-        if (option.length > 0) {
-            setOptions(data => data.concat(letters[count] + ' ' + option));
-            setOption('');
-            setCount(count + 1)
-        } else {
-            alert('Ops, preencha com mais letras')
-        }
+        setOptions(data => data.concat(''));
     };
 
     const saveQuestion = () => {
@@ -86,13 +83,25 @@ const CreateQuestions = (props) => {
         let data = inputAsk;
         setAsk(data => data.concat(`${countAsks} - ${inputAsk}`));
         setCountQuestion(countAsks + 1)
-    }
+    };
 
-    const changeOption = (e) => {
-        // e => setOption(e.target.value)
-        console.log("event", e)
+    const alterOptions = (index, value) => {
 
-    }
+        console.log("NEw", index)
+        console.log("NEw", value)
+        let data = options;
+        data[index] = value
+        setOptions(data);
+        console.log("NEw", options)
+    };
+
+    // const changeOption = (e) => {
+    //     let dados = options;
+    //     let newVal = dados[0].concat(e.target.value);
+    //     console.log("NEw", newVal)
+    //     setOptions(newVal)
+    //
+    // }
 
     return (
         <div>
@@ -149,28 +158,33 @@ const CreateQuestions = (props) => {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        <Row className=''>
-                            <Col md={10} tag={'div'}>
-                                <FormGroup style={{'display': 'flex', 'flexDirection': 'row'}}>
-                                    <Input type="text" id='alternative-input'
-                                           className='input-questions'
-                                           value={options.length > 0 ? options[0] : option}
-                                           onChange={e => setOption(e.target.value)}
-                                           placeholder='Adicionar Alternativa'/>
+                        {/*<Row className=''>*/}
+                            {/*<Col md={10} tag={'div'}>*/}
+                                {/*<FormGroup style={{'display': 'flex', 'flexDirection': 'row'}}>*/}
+                                    {/*<Input type="text" id='alternative-input'*/}
+                                           {/*className='input-questions'*/}
+                                           {/*value={options.length > 0 ? options[0] : option}*/}
+                                           {/*onChange={e => changeOption}*/}
+                                           {/*placeholder='Adicionar Alternativa'/>*/}
 
-                                    { options.length == 0 ? (
-                                        <div className="input-group-btn">
-                                            <button type="button" className="btn btn-info btn-flat"
-                                                    onClick={addAlternative}
-                                            >+
-                                            </button>
-                                        </div>
-                                    ): ''}
+                                    {/*{ options.length == 0 ? (*/}
+                                        {/*<div className="input-group-btn">*/}
+                                            {/*<button type="button" className="btn btn-info btn-flat"*/}
+                                                    {/*onClick={addAlternative}*/}
+                                            {/*>+*/}
+                                            {/*</button>*/}
+                                        {/*</div>*/}
+                                    {/*): ''}*/}
 
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        <InputAlternative addAlternative={e=>addAlternative()} changeValue={e => setOption(e.target.value)} value={option} options={options}/>
+                                {/*</FormGroup>*/}
+                            {/*</Col>*/}
+                        {/*</Row>*/}
+                        <InputAlternative addAlternative={e=>addAlternative}
+                                          changeValue={e => setOption(e.target.value)}
+                                          value={option}
+                                          options={options}
+                                          alterOptions={alterOptions}
+                        />
                     </ListGroupItem>
                 </div>
                 <ListGroupItem>

@@ -13,7 +13,6 @@ const Alternative = (props) => {
     return (
         <div>
             {options.map( (value, index) => (
-
                 <ListGroupItem className='text'>{ value }</ListGroupItem>
             )) }
         </div>
