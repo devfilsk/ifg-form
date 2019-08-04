@@ -16,27 +16,14 @@ import InputAlternative from "../../components/Inputs/InputAlternative";
 
 const CreateQuestions = (props) => {
 
-    const [options, setOptions] = useState([]);
+    const [options, setOptions] = useState(['']);
     const [tipo, setTipo] = useState('');
     const [option, setOption] = useState('');
     const [ask, setAsk] = useState([]);
     const [count, setCount] = useState(1);
     const [inputAsk, setInputAsk] = useState('');
     const [countAsks, setCountQuestion] = useState(1);
-    const [qtd, setQtd ] = useState(1);
-
-    const letters = {
-        1: 'A)',
-        2: 'B)',
-        3: 'C)',
-        4: 'D)',
-        5: 'E)',
-        6: 'F)',
-        7: 'G)',
-        8: 'H)',
-        9: 'I)',
-        10: 'J)',
-    };
+    const [qtd, setQtd] = useState(1);
 
     const setTipoContent = (e) => {
         let mult = document.getElementById('mult-question');
@@ -70,45 +57,38 @@ const CreateQuestions = (props) => {
     };
 
     const addAlternative = (index) => {
+        let i = options.length > 0 ? (options.length - 1) : options.length;
+        if (options[i] !== '') {
+            let data = options;
+            setOptions(data => data.concat(''));
+        } else {
+            alert("Não é possível adicionar uma opção em branco!")
+        }
+    };
 
-        // let data = options;
-        // setOptions(data => data.concat(''));
-        let data = options;
-        setOptions(data => data.concat(''));
+    const removeAlternative = (index) => {
+        let dados = options.slice();
+        dados.splice(index, 1);
+        setOptions(dados);
     };
 
     const saveQuestion = () => {
-        console.log("Pergunta: ", ask);
-        console.log("questões: ", options);
         let data = inputAsk;
         setAsk(data => data.concat(`${countAsks} - ${inputAsk}`));
         setCountQuestion(countAsks + 1)
     };
 
     const alterOptions = (index, value) => {
-
-        console.log("NEw", index)
-        console.log("NEw", value)
-        let data = options;
-        data[index] = value
-        setOptions(data);
-        console.log("NEw", options)
+        var newArray = options.slice();
+        newArray[index] = (value);
+        setOptions(newArray)
     };
-
-    // const changeOption = (e) => {
-    //     let dados = options;
-    //     let newVal = dados[0].concat(e.target.value);
-    //     console.log("NEw", newVal)
-    //     setOptions(newVal)
-    //
-    // }
 
     return (
         <div>
             {ask.length > 0 || option !== '' ? (
                 <Question questions={ask} options={options} count={count} countAsks={countAsks}/>
             ) : ''}
-
             <ListGroup>
                 <ListGroupItem tag="button" active>
                     <ListGroupItemHeading></ListGroupItemHeading>
@@ -158,32 +138,12 @@ const CreateQuestions = (props) => {
                                 </FormGroup>
                             </Col>
                         </Row>
-                        {/*<Row className=''>*/}
-                            {/*<Col md={10} tag={'div'}>*/}
-                                {/*<FormGroup style={{'display': 'flex', 'flexDirection': 'row'}}>*/}
-                                    {/*<Input type="text" id='alternative-input'*/}
-                                           {/*className='input-questions'*/}
-                                           {/*value={options.length > 0 ? options[0] : option}*/}
-                                           {/*onChange={e => changeOption}*/}
-                                           {/*placeholder='Adicionar Alternativa'/>*/}
-
-                                    {/*{ options.length == 0 ? (*/}
-                                        {/*<div className="input-group-btn">*/}
-                                            {/*<button type="button" className="btn btn-info btn-flat"*/}
-                                                    {/*onClick={addAlternative}*/}
-                                            {/*>+*/}
-                                            {/*</button>*/}
-                                        {/*</div>*/}
-                                    {/*): ''}*/}
-
-                                {/*</FormGroup>*/}
-                            {/*</Col>*/}
-                        {/*</Row>*/}
-                        <InputAlternative addAlternative={e=>addAlternative}
+                        <InputAlternative addAlternative={e => addAlternative}
                                           changeValue={e => setOption(e.target.value)}
                                           value={option}
                                           options={options}
                                           alterOptions={alterOptions}
+                                          remove={removeAlternative}
                         />
                     </ListGroupItem>
                 </div>
