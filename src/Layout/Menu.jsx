@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Link} from "react-router-dom";
 
 class Menu extends Component {
     render() {
@@ -19,10 +20,10 @@ class Menu extends Component {
                             <div className="input-group">
                                 <input type="text" name="q" className="form-control" placeholder="Search..."/>
                                 <span className="input-group-btn">
-                <button type="submit" name="search" id="search-btn" className="btn btn-flat">
-                  <i className="fa fa-search"></i>
-                </button>
-              </span>
+                                    <button type="submit" name="search" id="search-btn" className="btn btn-flat">
+                                      <i className="fa fa-search"></i>
+                                    </button>
+                                </span>
                             </div>
                         </form>
                         <ul className="sidebar-menu" data-widget="tree">
@@ -31,8 +32,8 @@ class Menu extends Component {
                                 <a href="fake_url">
                                     <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                                     <span className="pull-right-container">
-              <i className="fa fa-angle-left pull-right"></i>
-            </span>
+                              <i className="fa fa-angle-left pull-right"></i>
+                            </span>
                                 </a>
                                 <ul className="treeview-menu">
                                     <li><a href="index.html"><i className="fa fa-circle-o"></i> Dashboard v1</a></li>
@@ -40,13 +41,14 @@ class Menu extends Component {
                                         className="fa fa-circle-o"></i> Dashboard v2</a></li>
                                 </ul>
                             </li>
+                            <Link to="/novo-formulario" > sdfdsfdsf</Link>
                             <li className="treeview">
                                 <a href="fake_url">
                                     <i className="fa fa-files-o"></i>
                                     <span>Layout Options</span>
                                     <span className="pull-right-container">
-              <span className="label label-primary pull-right">4</span>
-            </span>
+                                      <span className="label label-primary pull-right">4</span>
+                                    </span>
                                 </a>
                                 <ul className="treeview-menu">
                                     <li><a href="pages/layout/top-nav.html"><i className="fa fa-circle-o"></i> Top
@@ -60,12 +62,12 @@ class Menu extends Component {
                                 </ul>
                             </li>
                             <li>
-                                <a href="pages/widgets.html">
+                                <Link to="/novo-formulario" >
                                     <i className="fa fa-th"></i> <span>Widgets</span>
                                     <span className="pull-right-container">
-              <small className="label pull-right bg-green">new</small>
-            </span>
-                                </a>
+                                    <small className="label pull-right bg-green">new</small>
+                                    </span>
+                                </Link>
                             </li>
                             <li className="treeview">
                                 <a href="fake_url">
