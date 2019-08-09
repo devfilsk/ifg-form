@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CreateForm from "../views/formularios/createForm";
 import CreateQuestions from "../views/perguntas/CreateQuestions";
+import {Route} from "react-router-dom";
 
 class Content extends Component {
     render() {
@@ -20,7 +21,9 @@ class Content extends Component {
                     </section>
 
                     <section className="content">
-                        <CreateQuestions/>
+                        <Route path='/novo-formulario' component={CreateForm}/>
+                        <Route path='/questoes' component={CreateQuestions}/>
+                        {/*<CreateQuestions/>*/}
                     </section>
                 </div>
             </div>
