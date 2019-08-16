@@ -221,7 +221,7 @@ class Header extends Component {
                                 </li>
                                 <li className="dropdown user user-menu">
                                     <a href="fake_url" className="dropdown-toggle" data-toggle="dropdown">
-                                        <img src="/dist/img/user2-160x160.jpg" className="user-image" alt="User"/>
+                                        <img src="https://api.adorable.io/avatars/35/abott@adorable.png" className="user-image" alt="User"/>
                                             <span className="hidden-xs">Alexander Pierce</span>
                                     </a>
                                     <ul className="dropdown-menu">
