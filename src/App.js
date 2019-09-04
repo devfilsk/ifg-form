@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 import Menu from "./Layout/Menu";
-import Content from "./Layout/Content";
+import Content from "./Layout/Content/Content";
 import 'bootstrap/dist/css/bootstrap.css';
 import CreateForm from "./views/formularios/createForm";
 import CreateQuestions from "./views/perguntas/CreateQuestions";
