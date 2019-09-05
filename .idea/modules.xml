@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ifg-forms2.iml" filepath="$PROJECT_DIR$/.idea/ifg-forms2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ifg-form.iml" filepath="$PROJECT_DIR$/.idea/ifg-form.iml" />
     </modules>
   </component>
 </project>

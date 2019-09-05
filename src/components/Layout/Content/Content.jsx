@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import CreateForm from "../../views/formularios/createForm";
-import CreateQuestions from "../../views/perguntas/CreateQuestions";
-import {Route} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
+
+import CreateForm from "../../../views/formularios/createForm";
+import CreateQuestions from "../../../views/perguntas/CreateQuestions";
 
 class Content extends Component {
     render() {
@@ -21,9 +22,11 @@ class Content extends Component {
                     </section>
 
                     <section className="content">
-                        <Route path='/novo-formulario' component={CreateForm}/>
+                    <Switch>
+                        <Route path='/novo-formulario' exact component={CreateForm}/>
                         <Route path='/questoes' component={CreateQuestions}/>
                         {/*<CreateQuestions/>*/}
+                    </Switch>
                     </section>
                 </div>
             </div>

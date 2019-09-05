@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Button, FormGroup, Label, Input, Form } from 'reactstrap';
+import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
 import './style.scss';
 import api from '../../services/api';
 
@@ -11,14 +11,14 @@ const CreateForm = () => {
     const [ status, setStatus ] = useState('');
     const [ tipo, setTipo ] = useState('');
 
-
     useEffect(() => {
     }, []);
 
     function handleSubmit(e){
         e.preventDefault();
         console.log(tipo)
-        api.post('')
+       const val = api.post('formulario', {});
+        console.log("Valor", val);
     }
 
     return (
@@ -27,24 +27,24 @@ const CreateForm = () => {
                 <Col md={6}>
                     <FormGroup>
                         <Label for="exampleEmail">Nome do Formulário</Label>
-                        <Input 
-                            type="text" 
-                            name="name" 
-                            id="exampleEmail" 
+                        <Input
+                            type="text"
+                            name="name"
+                            id="exampleEmail"
                             placeholder="Nome"
-                            onChange={e => setName(e.target.value)} 
+                            onChange={e => setName(e.target.value)}
                             value={name}/>
                     </FormGroup>
                 </Col>
                 <Col md={12}>
                     <FormGroup>
                         <Label for="examplePassword">Descrição</Label>
-                        <Input 
-                        type="textarea" 
-                        name="descricao" 
+                        <Input
+                        type="textarea"
+                        name="descricao"
                         id="descricao"
-                        placeholder="Digite uma breve descrição do formulário" 
-                        value={descricao} 
+                        placeholder="Digite uma breve descrição do formulário"
+                        value={descricao}
                         onChange={e => setDescricao(e.target.value)}/>
                     </FormGroup>
                 </Col>
@@ -62,11 +62,11 @@ const CreateForm = () => {
                 <Col md={4}>
                     <FormGroup>
                         <Label for="exampleCity">Campus</Label>
-                        <Input 
-                            type="text" 
-                            name="campus" 
-                            id="exampleCity" 
-                            placeholder="Campus de aplicação" 
+                        <Input
+                            type="text"
+                            name="campus"
+                            id="exampleCity"
+                            placeholder="Campus de aplicação"
                             value={campus}
                             onChange={e => setCampus(e.target.value)}/>
                     </FormGroup>
@@ -74,9 +74,9 @@ const CreateForm = () => {
                 <Col md={4}>
                     <FormGroup>
                         <Label for="exampleSelect">Status inicial</Label>
-                        <Input 
-                        type="select" 
-                        name="status" 
+                        <Input
+                        type="select"
+                        name="status"
                         id="exampleSelect"
                         defaultValue={status}
                         onChange={e => setStatus(e.target.value)}>
@@ -93,7 +93,7 @@ const CreateForm = () => {
                 </FormGroup>
                 </Col>
             </form>
-           
+
         </div>
     );
 }
