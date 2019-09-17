@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import CreateForm from "../../../views/formularios/createForm";
 import CreateQuestions from "../../../views/perguntas/CreateQuestions";
@@ -23,7 +23,7 @@ class Content extends Component {
 
                     <section className="content">
                     <Switch>
-                        <Route path='/novo-formulario' exact component={CreateForm}/>
+                        <Route path='/novo-formulario' component={CreateForm}/>
                         <Route path='/questoes' component={CreateQuestions}/>
                         {/*<CreateQuestions/>*/}
                     </Switch>
