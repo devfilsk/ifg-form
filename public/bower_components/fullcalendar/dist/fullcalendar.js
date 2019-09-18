@@ -6830,7 +6830,7 @@ var DayTableMixin = /** @class */ (function (_super) {
         }
         return segs;
     };
-    /* Header Rendering
+    /* Index Rendering
     ------------------------------------------------------------------------------------------------------------------*/
     DayTableMixin.prototype.renderHeadHtml = function () {
         var theme = this.view.calendar.theme;
@@ -10937,7 +10937,7 @@ var Calendar = /** @class */ (function () {
         }
         this.thawContentHeight();
     };
-    // Unrenders the current view and reflects this change in the Header.
+    // Unrenders the current view and reflects this change in the Index.
     // Unregsiters the `view`, but does not remove from viewByType hash.
     Calendar.prototype.clearView = function () {
         var currentView = this.view;
@@ -11075,7 +11075,7 @@ var Calendar = /** @class */ (function () {
             layout: this.opt('footer')
         };
     };
-    // can be called repeatedly and Header will rerender
+    // can be called repeatedly and Index will rerender
     Calendar.prototype.renderHeader = function () {
         var header = this.header;
         header.setToolbarOptions(this.computeHeaderOptions());
@@ -11084,7 +11084,7 @@ var Calendar = /** @class */ (function () {
             this.el.prepend(header.el);
         }
     };
-    // can be called repeatedly and Footer will rerender
+    // can be called repeatedly and Index will rerender
     Calendar.prototype.renderFooter = function () {
         var footer = this.footer;
         footer.setToolbarOptions(this.computeFooterOptions());

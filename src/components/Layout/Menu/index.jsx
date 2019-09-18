@@ -60,15 +60,15 @@ class Menu extends Component {
                             {/*    </ul>*/}
                             {/*</li>*/}
                             <li>
-                                <NavLink to="/novo-formulario">
-                                    <i className="fa fa-th"></i> <span>Meus formulários</span>
+                                <NavLink to="/">
+                                    <i className="fa fa-th"></i> <span>Meus formulárioss</span>
                                     <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>
                                     </span>
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/">
+                                <NavLink to="/novo-formulario">
                                     <i className="fa fa-th"></i> <span>Novo Formulário</span>
                                     <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>
