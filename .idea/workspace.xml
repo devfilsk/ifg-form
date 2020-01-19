@@ -2,26 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="497f04b6-98e1-4a13-bd0f-ff5f6dfbd333" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Alternative/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Alternative/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Question/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/bootstrap-datepicker/tests/assets/qunit.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/bootstrap-datepicker/tests/assets/qunit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/bootstrap/dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/bootstrap/dist/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/bootstrap/less/modals.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/bootstrap/less/modals.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/ckeditor/plugins/docprops/lang/nb.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/ckeditor/plugins/docprops/lang/nb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/datatables.net/js/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/datatables.net/js/jquery.dataTables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/fullcalendar/dist/fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/fullcalendar/dist/fullcalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bower_components/select2/tests/vendor/qunit-1.23.1.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/bower_components/select2/tests/vendor/qunit-1.23.1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/css/AdminLTE.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/css/AdminLTE.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/css/alt/AdminLTE-without-plugins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/css/alt/AdminLTE-without-plugins.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Content/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Content/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Header/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Menu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Menu/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Menu/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/alternative.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/perguntas/CreateQuestions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/perguntas/CreateQuestions.js" afterDir="false" />
     </list>
+    <list id="54b6b2df-5fdc-4671-8fe1-ad9d0406391f" name="ignore" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +24,6 @@
       <executable />
     </execution>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>rout</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
@@ -45,7 +31,7 @@
   <component name="ProjectId" id="1QzLF64f4LklKU3Go0y5n45Bck5" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ifg-form-backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Alternative" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\workspace\ifg-form\src\components\Alternative" />
       <recent name="C:\Workspace\workspace\ifg-form\src\components\Layout\Header" />
       <recent name="C:\Workspace\workspace\ifg-form\src\components\Layout\Footer" />
     </key>

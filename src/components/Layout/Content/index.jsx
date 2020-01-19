@@ -3,6 +3,8 @@ import {Switch, Route} from "react-router-dom";
 
 import CreateForm from "../../../views/formularios/createForm";
 import CreateQuestions from "../../../views/perguntas/CreateQuestions";
+import Formularios from '../../../views/formularios/Listar'
+import Formulario from '../../../views/formularios/Show'
 
 export default function Content (){
     return (
@@ -23,7 +25,9 @@ export default function Content (){
                 <section className="content">
                 <Switch>
                     <Route path='/novo-formulario' component={CreateForm}/>
-                    <Route path='/questoes' component={CreateQuestions}/>
+                    <Route path='/formularios' component={Formularios}/>
+                    <Route path='/formulario/:id' exact component={Formulario}/>
+                    <Route path='/formulario/:id/questoes' exact component={CreateQuestions}/>
                     {/*<CreateQuestions/>*/}
                 </Switch>
                 </section>

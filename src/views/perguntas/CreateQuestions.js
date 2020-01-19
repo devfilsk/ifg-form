@@ -7,10 +7,9 @@ import {
     Row,
     Col,
     FormGroup,
-    Label, Input, CustomInput, Button, Card, CardTitle, CardText
+    Label, Input, CustomInput, Button
 } from "reactstrap";
-import Alternative from "../../components/alternative";
-import Question from "../../components/question";
+import Question from "../../components/Question";
 import './createQuestions.scss';
 import InputAlternative from "../../components/Inputs/InputAlternative";
 

@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {Card, CardTitle, Col, ListGroup, ListGroupItem, Row} from "reactstrap";
-import Alternative from "./alternative";
+import React from 'react';
+import {Col, ListGroup, ListGroupItem, Row} from "reactstrap";
+
+import Alternative from "../Alternative/index";
 
 const Question = (props) => {
     return (

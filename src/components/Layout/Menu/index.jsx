@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Link, NavLink} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 class Menu extends Component {
     render() {
@@ -60,7 +60,7 @@ class Menu extends Component {
                             {/*    </ul>*/}
                             {/*</li>*/}
                             <li>
-                                <NavLink to="/">
+                                <NavLink to="/formularios">
                                     <i className="fa fa-th"></i> <span>Meus formulárioss</span>
                                     <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>

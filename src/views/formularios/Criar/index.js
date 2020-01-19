@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap';
 import './style.scss';
-import api from '../../services/api';
+import api from '../../../services/api';
 
 const CreateForm = () => {
 
