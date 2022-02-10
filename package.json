@@ -30,7 +30,7 @@
     "jvectormap": "^1.2.2",
     "moment": "^2.24.0",
     "morris.js": "github:morrisjs/morris.js",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "pace": "0.0.4",
     "raphael": "^2.2.7",
     "react": "^16.8.6",
