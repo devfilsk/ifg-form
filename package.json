@@ -28,7 +28,7 @@
     "jquery-sparkline": "^2.4.0",
     "jquery-ui": "^1.12.1",
     "jvectormap": "^1.2.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "morris.js": "github:morrisjs/morris.js",
     "node-sass": "^4.12.0",
     "pace": "0.0.4",
